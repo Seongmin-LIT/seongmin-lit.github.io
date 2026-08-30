@@ -1,0 +1,417 @@
+/* ==========================================================
+   Seongmin Park — CV website
+   Palette: bg #EEE3CB · surface #D7C0AE · accent #7A5C50
+            secondary #B7C4CF · text #3E3833
+   ========================================================== */
+
+:root {
+  --color-bg: #EEE3CB;
+  --color-surface: #D7C0AE;
+  --color-accent: #7A5C50;
+  --color-secondary: #B7C4CF;
+  --color-text: #3E3833;
+  --color-text-muted: #6E635B;
+  --color-text-soft: #574C43;
+  --font-heading: 'Young Serif', 'Pretendard Variable', Pretendard, serif;
+  --font-body: 'Pretendard Variable', Pretendard, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  font-family: var(--font-body);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration-color: rgba(122, 92, 80, 0.45);
+  text-underline-offset: 3px;
+  transition: color 0.15s ease;
+}
+a:hover { color: var(--color-secondary); }
+::selection { background: var(--color-secondary); color: var(--color-text); }
+
+/* ---------- Layout: sidebar + main ---------- */
+
+.cv-root {
+  display: flex;
+  min-height: 100vh;
+  align-items: stretch;
+}
+
+.cv-sidebar {
+  flex: 0 0 340px;
+  background: var(--color-accent);
+}
+
+.cv-sidebar-inner {
+  position: sticky;
+  top: 0;
+  padding: 64px 44px 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.cv-main {
+  flex: 1;
+  padding: 72px 56px 96px;
+  display: flex;
+  justify-content: center;
+}
+
+.cv-content {
+  width: 100%;
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+/* ---------- Sidebar ---------- */
+
+.cv-photo {
+  width: 148px;
+  height: 148px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--color-surface);
+  box-shadow: 0 0 0 6px rgba(238, 227, 203, 0.4);
+}
+
+.cv-photo-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  color: var(--color-text-soft);
+}
+
+.cv-name {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 1.15;
+  color: #EEE3CB;
+  letter-spacing: 0.2px;
+}
+
+.cv-name-korean {
+  margin: 6px 0 0;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  color: rgba(238, 227, 203, 0.7);
+}
+
+.cv-affiliation {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: rgba(238, 227, 203, 0.88);
+}
+.cv-affiliation p { margin: 0; }
+
+.cv-sidebar-divider {
+  height: 1px;
+  width: 56px;
+  background: rgba(238, 227, 203, 0.35);
+  border: none;
+  margin: 0;
+}
+
+.cv-tagline {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.6;
+  font-style: italic;
+  color: rgba(238, 227, 203, 0.88);
+}
+
+.cv-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.cv-contact-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #EEE3CB;
+  text-decoration: none;
+}
+.cv-contact-link:hover { color: rgba(238, 227, 203, 0.7); }
+
+/* ---------- Sections ---------- */
+
+.cv-section-title {
+  margin: 0 0 6px;
+  font-family: var(--font-heading);
+  font-weight: 400;
+  font-size: 28px;
+  color: var(--color-text);
+}
+
+.cv-section-rule {
+  width: 40px;
+  height: 3px;
+  background: var(--color-accent);
+  border: none;
+  margin: 0 0 24px;
+}
+
+.cv-body-text {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.75;
+  text-wrap: pretty;
+}
+
+/* ---------- News ---------- */
+
+.cv-news-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cv-news-item {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  gap: 16px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.cv-news-date {
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.4px;
+  color: var(--color-accent);
+  padding-top: 2px;
+}
+
+/* ---------- Timeline (Education / Experience) ---------- */
+
+.cv-timeline {
+  display: flex;
+  flex-direction: column;
+}
+
+.cv-timeline-item {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 20px;
+  padding-bottom: 28px;
+}
+.cv-timeline-item:last-child { padding-bottom: 0; }
+
+.cv-timeline-date {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  color: var(--color-accent);
+  padding-top: 2px;
+}
+
+.cv-timeline-body {
+  position: relative;
+  padding-left: 24px;
+  border-left: 2px solid var(--color-surface);
+}
+.cv-timeline-item:last-child .cv-timeline-body { border-left-color: transparent; }
+
+.cv-timeline-body::before {
+  content: '';
+  position: absolute;
+  left: -6px;
+  top: 5px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-accent);
+}
+
+.cv-item-title {
+  margin: 0 0 4px;
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.cv-item-subtitle {
+  margin: 0 0 4px;
+  font-size: 15.5px;
+  line-height: 1.55;
+}
+
+.cv-item-detail {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--color-text-muted);
+}
+
+/* ---------- Bullet lists (Research Interests / Awards) ---------- */
+
+.cv-bullet-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cv-bullet-item {
+  position: relative;
+  padding-left: 24px;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.cv-bullet-item::before {
+  content: '';
+  position: absolute;
+  left: 2px;
+  top: 9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-accent);
+}
+
+.cv-award-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.cv-award-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.cv-award-date {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  color: var(--color-accent);
+  white-space: nowrap;
+}
+
+.cv-award-detail {
+  margin: 4px 0 0;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--color-text-soft);
+}
+
+/* ---------- Publications (hidden for now) ---------- */
+
+.cv-publication-list {
+  margin: 0;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-size: 15.5px;
+  line-height: 1.65;
+}
+
+/* ---------- Skills ---------- */
+
+.cv-skill-tags {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.cv-skill-tag {
+  background: var(--color-secondary);
+  color: var(--color-text);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 7px 16px;
+  border-radius: 999px;
+}
+
+/* ---------- Life (gallery) ---------- */
+
+.cv-life-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 18px;
+}
+
+.cv-life-photo {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cv-life-photo img,
+.cv-life-placeholder {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.cv-life-placeholder {
+  background: var(--color-surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+.cv-life-photo figcaption {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--color-text-muted);
+}
+
+/* ---------- Footer ---------- */
+
+.cv-footer {
+  border-top: 1px solid var(--color-surface);
+  padding-top: 24px;
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+.cv-footer p { margin: 0; }
+
+/* ---------- Mobile: sidebar collapses into a top header ---------- */
+
+@media (max-width: 760px) {
+  .cv-root { flex-direction: column; }
+  .cv-sidebar { flex: none; }
+  .cv-sidebar-inner {
+    position: static;
+    padding: 48px 28px 40px;
+  }
+  .cv-main { padding: 48px 24px 72px; }
+  .cv-content { gap: 48px; }
+  .cv-timeline-item,
+  .cv-news-item {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+  .cv-timeline-date { padding-top: 0; }
+}
