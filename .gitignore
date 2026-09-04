@@ -1,0 +1,9 @@
+# 원본 사진 (웹용으로 변환한 assets/profile.jpg, life-*.jpg 만 배포)
+assets/원본/
+assets/*.heic
+assets/프로필 사진 원본.jpeg
+assets/장관상.jpg
+assets/워크숍.heic
+
+# Windows 다운로드 잔재
+*:Zone.Identifier

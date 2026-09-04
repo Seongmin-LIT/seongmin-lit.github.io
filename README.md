@@ -8,10 +8,17 @@ GitHub Pages용 정적 사이트. 프레임워크 없이 HTML + CSS만 사용.
 - `assets/` — 이미지 폴더 (직접 만들어서 넣기)
 
 ## 할 일
-1. `assets/profile.jpg` — 프로필 사진 추가 (정사각형 권장)
-2. GitHub 링크 — `index.html`에서 `https://github.com/`을 본인 프로필 URL로 교체
-3. Life 사진 — `assets/life-1.jpg` 등 추가 후, 주석대로 placeholder `<div>`를 `<img>`로 교체
-4. Publications / Service 섹션 — 준비되면 `index.html`의 주석 해제
+1. GitHub 링크 — `index.html`에서 `https://github.com/`을 본인 프로필 URL로 교체
+2. Publications / Service 섹션 — 준비되면 `index.html`의 주석 해제
+3. Life 사진 추가 — 새 사진은 `assets/life-3.jpg` 등으로 넣고 `index.html`의 Life 섹션에 `<figure>` 추가
+
+## 이미지
+배포되는 건 웹용으로 변환한 파일만입니다 (원본은 `.gitignore` 처리).
+- `assets/profile.jpg` — 600×600, 사이드바 프로필 (원형 크롭됨)
+- `assets/life-1.jpg` — LIT Lab 워크숍
+- `assets/life-2.jpg` — ICT 챌린지 2026 시상식
+
+원본에서 다시 만들려면 Pillow(+HEIC는 `pillow-heif`)로 리사이즈 후 저장.
 
 ## 배포 (GitHub Pages)
 1. 새 저장소 생성 (개인 사이트면 `username.github.io`)
